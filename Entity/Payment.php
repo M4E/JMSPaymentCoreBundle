@@ -216,6 +216,16 @@ class Payment implements PaymentInterface
     {
         return $this->targetAmount;
     }
+    
+    /**
+     * {@add} Method for manage from Admin
+     */
+    public function setTargetAmount($targetAmount)
+    {
+        $this->targetAmount = $targetAmount;
+        
+        return $this;
+    }
 
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection|\JMS\Payment\CoreBundle\Entity\FinancialTransaction[]
@@ -282,15 +292,26 @@ class Payment implements PaymentInterface
     {
         $this->depositedAmount = $amount;
     }
-
+    
+    /**
+     * {@update}
+     */
     public function setDepositingAmount($amount)
     {
         $this->depositingAmount = $amount;
     }
 
-    public function setExpirationDate(\DateTime $date)
+    public function setExpirationDate(\DateTime $date = null)
     {
-        $this->expirationDate = $date;
+        if ($this->expirationDate instanceof \DateTime) {
+            if (null !== $date) {
+                $this->expirationDate = $date;
+                
+                return $this;
+            }
+        }
+        
+        $this->date = $$date;
     }
 
     public function setExpired($boolean)
