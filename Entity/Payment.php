@@ -227,16 +227,21 @@ class Payment implements PaymentInterface
      * {@add}
      * doing nothing
      */
-    public function setLink() {}
-
-    /**
-     * {@add}
-     */
-    public function getLink() 
+    public function setFacture() {}
+    public function getFacture() 
     {
         return $this->getId();
     }
 
+    /**
+     * {@add}
+     * doing nothing
+     */
+    public function setRecu() {}
+    public function getRecu() 
+    {
+        return $this->getId();
+    }
 
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection|\JMS\Payment\CoreBundle\Entity\FinancialTransaction[]
