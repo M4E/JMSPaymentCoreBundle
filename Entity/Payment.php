@@ -218,14 +218,25 @@ class Payment implements PaymentInterface
     }
     
     /**
-     * {@add} Method for manage from Admin
+     * {@add} 
+     * doing nothing
      */
-    public function setTargetAmount($targetAmount)
+    public function setTargetAmount() { }
+
+    /**
+     * {@add}
+     * doing nothing
+     */
+    public function setLink() {}
+
+    /**
+     * {@add}
+     */
+    public function getLink() 
     {
-        $this->targetAmount = $targetAmount;
-        
-        return $this;
+        return $this->getId();
     }
+
 
     /**
      * @return \Doctrine\Common\Collections\ArrayCollection|\JMS\Payment\CoreBundle\Entity\FinancialTransaction[]
@@ -301,6 +312,9 @@ class Payment implements PaymentInterface
         $this->depositingAmount = $amount;
     }
 
+    /**
+     * {@update}
+     */
     public function setExpirationDate(\DateTime $date = null)
     {
         if ($this->expirationDate instanceof \DateTime) {
@@ -311,7 +325,7 @@ class Payment implements PaymentInterface
             }
         }
         
-        $this->date = $$date;
+        $this->date = $date;
     }
 
     public function setExpired($boolean)
