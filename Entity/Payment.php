@@ -221,13 +221,13 @@ class Payment implements PaymentInterface
      * {@add} 
      * doing nothing
      */
-    public function setTargetAmount() { }
+    public function setTargetAmount($targetAmount) {}
 
     /**
      * {@add}
      * doing nothing
      */
-    public function setFacture() {}
+    public function setFacture($data) {}
     public function getFacture() 
     {
         return $this->getId();
@@ -237,7 +237,7 @@ class Payment implements PaymentInterface
      * {@add}
      * doing nothing
      */
-    public function setRecu() {}
+    public function setRecu($data) {}
     public function getRecu() 
     {
         return $this->getId();
