@@ -37,6 +37,9 @@
                 <cascade-remove/>
                 <cascade-refresh/>
             </cascade>
+            <order-by>
+                <order-by-field name="updatedAt" direction="DESC" />
+            </order-by>
         </one-to-many>
 
         <lifecycle-callbacks>
