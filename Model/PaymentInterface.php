@@ -28,6 +28,7 @@ interface PaymentInterface
     const STATE_NEW = 6;
     const STATE_DEPOSITING = 7;
     const STATE_DEPOSITED = 8;
+    const STATE_REVERSING = 9;
 
     function getApprovedAmount();
 
