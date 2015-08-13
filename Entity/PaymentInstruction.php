@@ -318,4 +318,10 @@ class PaymentInstruction implements PaymentInstructionInterface
     {
         $this->state = $state;
     }
+
+    /**
+     * {@hack}
+     * @return void
+     */
+    public function payments($payments = null) { }
 }
