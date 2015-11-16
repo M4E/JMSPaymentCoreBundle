@@ -367,4 +367,17 @@ class Payment implements PaymentInterface
     {
         return $this->updatedAt;
     }
+    
+    /**
+     * special for mangopay
+     */
+    public function getRefMangopay()
+    {
+        $reference = null;
+        if ($this->getTransactions()->first() instanceof \JMS\Payment\CoreBundle\Model\FinancialTransactionInterface) {
+            $reference = $this->getTransactions()->first()->getReferenceNumber();
+        }
+
+        return (string) $reference;
+    }
 }
